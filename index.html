@@ -1216,7 +1216,7 @@
 </head>
 <body>
     <div class="sync-status success" id="syncStatus">✅ Datos cargados</div>
-    <div class="toast" id="toast">✅ 3 obras cargadas</div>
+    <div class="toast" id="toast">❌ PIN incorrecto</div>
 
     <nav class="nav">
         <div class="nav-logo" onclick="scrollToTop()">🌐</div>
@@ -2085,6 +2085,7 @@
                 linkBox.style.display = 'block';
                 document.getElementById('pagesLink').textContent = pagesUrl;
                 document.getElementById('pagesLink').href = pagesUrl;
+                localStorage.setItem('galeria_pages_url', pagesUrl);
                 statusDiv.innerHTML = '✅ ¡Tu galería ya está en internet! La página puede tardar unos minutos en verse la primera vez.';
             } catch (error) {
                 if (error.message === 'Pega tu token de GitHub primero en la pestaña "GitHub Gist" y pulsa Guardar.') {
